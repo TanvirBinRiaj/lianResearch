@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { scrollbar-width: thin; }
+body { @apply bg-[#0a0a0f] text-zinc-100 font-sans antialiased; }
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb { @apply bg-zinc-700 rounded-full; }
+.prose a { @apply text-indigo-400 hover:text-indigo-300 break-all; }
+
+/* — Professional Report prose overrides — */
+.prose {
+  @apply text-zinc-300 leading-relaxed;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.prose p, .prose li { @apply break-words; }
+.prose h1 { @apply text-2xl font-bold text-white mt-8 mb-4 leading-tight; }
+.prose h2 { @apply text-xl font-bold text-white mt-10 mb-3 leading-tight border-b border-zinc-800 pb-2; }
+.prose h3 { @apply text-lg font-semibold text-white mt-8 mb-2; }
+.prose h4 { @apply text-base font-semibold text-zinc-100 mt-6 mb-2; }
+.prose ul, .prose ol { @apply my-3 pl-6; }
+.prose li { @apply my-1; }
+.prose blockquote { @apply border-l-4 border-indigo-500/30 pl-4 py-2 bg-zinc-900/30 rounded-r-lg my-4 text-zinc-400 italic; }
+.prose code { @apply bg-zinc-900 px-1.5 py-0.5 rounded text-sm text-amber-300 break-all; }
+.prose pre { @apply bg-zinc-900 border border-zinc-800 rounded-xl p-4 overflow-x-auto my-4; }
+.prose pre code { @apply bg-transparent p-0 text-zinc-300; }
+.prose hr { @apply border-zinc-800 my-8; }
+
+/* — Table: critical fix for 6-col career table — */
+.prose table {
+  @apply w-full text-sm my-6 border-collapse;
+  display: table;
+  min-width: 640px;
+}
+.prose thead { @apply bg-zinc-900; }
+.prose th {
+  @apply px-3 py-2.5 text-left font-semibold text-zinc-200 border border-zinc-800 whitespace-nowrap text-xs uppercase tracking-wider;
+}
+.prose td {
+  @apply px-3 py-2.5 border border-zinc-800 align-top text-zinc-300 text-[13px] leading-snug;
+  white-space: normal;
+  word-break: break-word;
+}
+.prose tbody tr:nth-child(even) { @apply bg-zinc-900/30; }
+.prose tbody tr:hover { @apply bg-zinc-900/50; }
+/* wrap tables in scroll container — ReactMarkdown will use this */
+.prose .table-wrapper { @apply overflow-x-auto -mx-2 px-2 my-6 rounded-xl border border-zinc-800; }
+.prose .table-wrapper table { @apply my-0 border-0; min-width: 680px; }
+
+/* Left/right panels word-break */
+.break-anywhere { overflow-wrap: anywhere; word-break: break-word; }

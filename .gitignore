@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+pip-wheel-metadata/
+.sharedenv/
+.pytest_cache/
+.tox/
+.venv/
+venv/
+ENV/
+env/
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/package-lock.json
+frontend/build/
+
+# Data & configs
+backend/data/
+backend/data/*.db
+backend/data/*.enc.json
+backend/data/.key
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+/tmp/*
+
+# Secrets
+.env
+*.key
+config.enc.json
